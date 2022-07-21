@@ -465,4 +465,12 @@ class MarginData(KucoinBaseRestApi):
             'marginModel': marginModel,
         }
         return self._request('GET', '/api/v1/risk/limit/strategy', params=params)
+    
+    def get_isolated_accounts(self, balanceCurrency="BTC"):
+	    params = {
+            'balanceCurrency' : balanceCurrency
+        }
+	
+	    return self._request('GET', '/api/v1/margin/trade/last', params=params)
+
 
